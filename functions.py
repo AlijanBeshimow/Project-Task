@@ -17,14 +17,14 @@ def view_task():
 def find_task(name="name"):
     tasks = load_tasks()
     for task in tasks:
-        if task.name == name:
+        if name == task.name:
             print(task)
 
 
 def remove_task(name="name"):
     tasks = load_tasks()
     for task in tasks.copy():
-        if task.name == name:
+        if name == task.name:
             print("Task removed")
             tasks.remove(task)
         save_tasks(tasks)
@@ -33,7 +33,7 @@ def remove_task(name="name"):
 def find_by_category(name="name"):
     tasks = load_tasks()
     for task in tasks:
-        if task.category == name:
+        if name == task.category:
             print(task)
 
 
