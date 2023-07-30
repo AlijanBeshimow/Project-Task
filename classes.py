@@ -8,8 +8,8 @@ class Task:
         self.category = category
         self.task_info = task_info
         self.created_date = datetime.date.today()
-        self.completed_date = datetime.datetime.now()
+        self.completed_date = datetime.date.today()
 
     def __repr__(self):
         return f"""
-{self.name.capitalize()}\t{self.created_date}\t{self.completed_date.strftime("%Y-%m-%d %H:%M:%S")}\t{self.user.capitalize()}\t{self.task_info}\t{self.category}"""
+{self.name.capitalize()}\t{self.created_date}\t{self.completed_date}\t{self.user.capitalize()}\t{self.task_info}\t{self.category}"""

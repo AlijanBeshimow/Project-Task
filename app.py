@@ -34,8 +34,8 @@ while True:
     elif option == '5':
         update_task()
     elif option == '6':
-        name = input("Task name: ")
+        name = input("Enter Task name to remove: ")
         remove_task(name=name)
-    elif option == 'q':
+    elif option == '7':
         print("Application closed\n")
         break

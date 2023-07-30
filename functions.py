@@ -16,35 +16,48 @@ def view_task():
 
 def find_task(name="name"):
     tasks = load_tasks()
+    found = False
     for task in tasks:
         if name == task.name:
             print(task)
+            found = True
+    if not found:
+        print("Task not found")
 
 
 def remove_task(name="name"):
     tasks = load_tasks()
+    removed = False
     for task in tasks.copy():
         if name == task.name:
-            print("Task removed")
             tasks.remove(task)
-        save_tasks(tasks)
+            save_tasks(tasks)
+            removed = True
+    if removed:
+        print("Task removed")
+    else:
+        print("Task not found")
 
 
 def find_by_category(name="name"):
     tasks = load_tasks()
+    found = False
     for task in tasks:
         if name == task.category:
             print(task)
+            found = True
+    if not found:
+        print("Category not found")
 
 
 def update_task():
     tasks = load_tasks()
-    user_input = input("Enter TASK name or USER name to update details: ")
+    user_input = input("Enter USER name to update details: ")
     print()
     for task in tasks:
-        if user_input == task.name or user_input == task.user:
+        if user_input == task.user:
             option = input(f"""
-What you want to update for contact: {task.user.capitalize()}
+What you want to update for User: {task.user.capitalize()}
 
 1. Task Name  
 2. User name
